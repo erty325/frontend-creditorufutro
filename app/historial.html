@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditoFuturo - Historial</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/historial.css">
+    <style>
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg viewBox="0 0 40 40" class="logo-icon">
+                        <defs>
+                            <linearGradient id="gradientLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="20" cy="20" r="18" fill="url(#gradientLogo)"/>
+                        <text x="20" y="26" text-anchor="middle" fill="white" font-weight="bold" font-size="16">C</text>
+                    </svg>
+                    <h1>CreditoFuturo</h1>
+                </div>
+                <p class="sidebar-subtitle">SCORE SYSTEM V2.0</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span>Clientes</span>
+                </a>
+                <a href="pagos-cuotas.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    <span>Pagos y Cuotas</span>
+                </a>
+                <a href="cuadre-caja.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>Cuadre de Caja</span>
+                </a>
+                <a href="historial.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <span>Historial</span>
+                </a>
+                <a href="analisis-riesgo.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span>Analisis Riesgo</span>
+                </a>
+                <a href="exportaciones.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>Exportar</span>
+                </a>
+<a href="cambiar-contraseña.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <span>Cambiar Contrasena</span>
+                </a>
+                <a href="cambiar-email.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <span>Cambiar Email</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-card">
+                    <svg viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="18" fill="#3B82F6"/>
+                        <circle cx="20" cy="14" r="5" fill="white"/>
+                        <path d="M10 32 Q10 24 20 24 Q30 24 30 32" fill="white"/>
+                    </svg>
+                    <div class="user-details">
+                        <p class="user-name">Administrador</p>
+                        <p class="user-role">Sistema Financiero</p>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn btn-secondary" style="width: 100%; margin-top: 12px; padding: 12px;">
+                    Cerrar Sesion
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                    <h2>Historial de Movimientos</h2>
+                </div>
+                <div class="header-right">
+                    <div class="header-info">
+                        <span class="info-date" id="current-date"></span>
+                        <div class="header-divider"></div>
+                        <span class="info-hour" id="current-hour"></span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="section active">
+                <!-- Estadisticas Rapidas -->
+                <div class="historial-stats-grid">
+                    <div class="stat-card-mini">
+                        <div class="stat-icon-mini blue">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 2v20M17 7l-5-5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info-mini">
+                            <span class="stat-value-mini" id="stat-total-movimientos">0</span>
+                            <span class="stat-label-mini">Total Movimientos</span>
+                        </div>
+                    </div>
+                    <div class="stat-card-mini">
+                        <div class="stat-icon-mini green">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info-mini">
+                            <span class="stat-value-mini" id="stat-pagos-realizados">0</span>
+                            <span class="stat-label-mini">Pagos Realizados</span>
+                        </div>
+                    </div>
+                    <div class="stat-card-mini">
+                        <div class="stat-icon-mini purple">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <circle cx="12" cy="8" r="4" fill="currentColor"/>
+                                <path d="M6 20c0-3.314 6-6 6-6s6 2.686 6 6" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info-mini">
+                            <span class="stat-value-mini" id="stat-clientes-nuevos">0</span>
+                            <span class="stat-label-mini">Clientes Nuevos</span>
+                        </div>
+                    </div>
+                    <div class="stat-card-mini">
+                        <div class="stat-icon-mini orange">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 10h20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info-mini">
+                            <span class="stat-value-mini" id="stat-cierres-caja">0</span>
+                            <span class="stat-label-mini">Cierres de Caja</span>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Filtros Rapidos de Tipo -->
+                <div class="historial-tipo-filtros" style="display: flex; gap: 12px; margin-bottom: 16px;">
+                    <button class="filter-btn active" data-tipo-filter="todos" onclick="historial.filtrarPorTipoRapido('todos')">
+                        Todos
+                    </button>
+                    <button class="filter-btn" data-tipo-filter="pagos" onclick="historial.filtrarPorTipoRapido('pagos')">
+                        Pagos y Cuotas
+                    </button>
+                    <button class="filter-btn" data-tipo-filter="caja" onclick="historial.filtrarPorTipoRapido('caja')">
+                        Cuadre de Caja
+                    </button>
+                </div>
+
+                <!-- Filtros -->
+                <div class="historial-filtros">
+                    <div class="filtro-grupo">
+                        <label>Tipo de Movimiento</label>
+                        <select id="filtro-tipo">
+                            <option value="todos">Todos</option>
+                            <option value="pago">Pagos</option>
+                            <option value="ingreso">Ingresos Caja</option>
+                            <option value="egreso">Egresos Caja</option>
+                            <option value="cierre_caja">Cierre de Caja</option>
+                        </select>
+                    </div>
+                    <div class="filtro-grupo">
+                        <label>Fecha Desde</label>
+                        <input type="date" id="filtro-fecha-desde">
+                    </div>
+                    <div class="filtro-grupo">
+                        <label>Fecha Hasta</label>
+                        <input type="date" id="filtro-fecha-hasta">
+                    </div>
+                    <div class="filtro-grupo">
+                        <label>Buscar</label>
+                        <input type="text" id="filtro-busqueda" placeholder="Buscar en descripcion...">
+                    </div>
+                    <button class="btn btn-primary" onclick="historial.aplicarFiltros()">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Filtrar
+                    </button>
+                    <button class="btn btn-secondary" onclick="historial.limpiarFiltros()">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
+                            <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        Limpiar
+                    </button>
+                </div>
+
+                <!-- Timeline de Historial -->
+                <div class="historial-timeline-container">
+                    <div class="timeline-header">
+                        <h3>Linea de Tiempo</h3>
+                        <span class="timeline-count" id="timeline-count">0 movimientos</span>
+                    </div>
+                    <div class="timeline" id="historial-timeline">
+                        <!-- Los items del timeline se cargan dinamicamente -->
+                    </div>
+                    <div id="empty-historial" class="empty-state" style="display: none;">
+                        <svg viewBox="0 0 24 24" width="80" height="80">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                            <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                        </svg>
+                        <p>No hay movimientos en el historial</p>
+                    </div>
+                </div>
+
+                <!-- Paginacion -->
+                <div class="historial-paginacion" id="paginacion">
+                    <button class="btn btn-secondary btn-sm" id="btn-anterior" onclick="historial.paginaAnterior()">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        Anterior
+                    </button>
+                    <span class="paginacion-info" id="paginacion-info">Pagina 1 de 1</span>
+                    <button class="btn btn-secondary btn-sm" id="btn-siguiente" onclick="historial.paginaSiguiente()">
+                        Siguiente
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Detalle de Movimiento -->
+    <div class="modal hidden" id="modal-detalle">
+        <div class="modal-overlay" onclick="historial.cerrarModalDetalle()"></div>
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3>Detalle del Movimiento</h3>
+                <button class="btn-close" onclick="historial.cerrarModalDetalle()">&times;</button>
+            </div>
+            <div class="detalle-movimiento" id="detalle-contenido">
+                <!-- Contenido dinamico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notificacion" class="notificacion hidden"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth-check.js"></script>
+
+    <script src="../js/shared-data.js"></script>
+
+    <script src="../js/historial.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const name = sessionStorage.getItem('currentUser') || null
+                if (name) {
+                    const el = document.querySelector('.user-name')
+                    if (el) el.textContent = name
+                }
+            } catch (e) {
+                console.warn('Could not set sidebar user name', e)
+            }
+
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            if (menuBtn && sidebar && overlay) {
+                menuBtn.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                });
+                
+                overlay.addEventListener('click', function() {
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            }
+        })
+    </script>
+</body>
+</html>

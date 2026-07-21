@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditoFuturo - Dashboard Principal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg viewBox="0 0 40 40" class="logo-icon">
+                        <defs>
+                            <linearGradient id="gradientLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="20" cy="20" r="18" fill="url(#gradientLogo)"/>
+                        <text x="20" y="26" text-anchor="middle" fill="white" font-weight="bold" font-size="16">C</text>
+                    </svg>
+                    <h1>CreditoFuturo</h1>
+                </div>
+                <p class="sidebar-subtitle">Score System v2.0</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="usuarios.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span>Clientes</span>
+                </a>
+                <a href="pagos-cuotas.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    <span>Pagos y Cuotas</span>
+                </a>
+                <a href="cuadre-caja.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>Cuadre de Caja</span>
+                </a>
+                <a href="historial.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <span>Historial</span>
+                </a>
+                <a href="analisis-riesgo.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span>Analisis Riesgo</span>
+                </a>
+                <a href="exportaciones.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>Exportar</span>
+                </a>
+<a href="cambiar-contraseña.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <span>Cambiar Contrasena</span>
+                </a>
+                <a href="cambiar-email.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <span>Cambiar Email</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-card">
+                    <svg viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="18" fill="#3B82F6"/>
+                        <circle cx="20" cy="14" r="5" fill="white"/>
+                        <path d="M10 32 Q10 24 20 24 Q30 24 30 32" fill="white"/>
+                    </svg>
+                    <div class="user-details">
+                        <p class="user-name">Administrador</p>
+                        <p class="user-role">Sistema Financiero</p>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn btn-secondary" style="width: 100%; margin-top: 12px; padding: 12px;">
+                    Cerrar Sesion
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                    <h2 id="section-title">Panel de Control</h2>
+                </div>
+                <div class="header-right">
+                    <div class="header-info">
+                        <span class="info-date" id="current-date"></span>
+                        <div class="header-divider"></div>
+                        <span class="info-hour" id="current-hour"></span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <section class="section active">
+                <div class="dashboard-premium">
+                    <!-- Welcome -->
+                    <div class="dashboard-welcome">
+                        <h1 class="welcome-text">Panel de Control</h1>
+                        <p class="welcome-subtitle">Resumen general del sistema de creditos y score de clientes</p>
+                    </div>
+                    
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card blue">
+                            <div class="stat-header">
+                                <div class="stat-icon blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                </div>
+                                <p class="stat-label">Clientes<br>Activos</p>
+                            </div>
+                            <p class="stat-value" id="stat-clientes">0</p>
+                            <span class="stat-change positive" id="stat-clientes-change">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="18 15 12 9 6 15"/>
+                                </svg>
+                                Activos
+                            </span>
+                        </div>
+                        
+                        <div class="stat-card green">
+                            <div class="stat-header">
+                                <div class="stat-icon green">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                    </svg>
+                                </div>
+                                <p class="stat-label">Capital<br>Desembolsado</p>
+                            </div>
+                            <p class="stat-value" id="stat-capital">$0</p>
+                            <span class="stat-change positive">Total prestado</span>
+                        </div>
+                        
+                        <div class="stat-card orange">
+                            <div class="stat-header">
+                                <div class="stat-icon orange">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 6v6l4 2"/>
+                                    </svg>
+                                </div>
+                                <p class="stat-label">Saldo<br>Pendiente</p>
+                            </div>
+                            <p class="stat-value" id="stat-pendiente">$0</p>
+                            <span class="stat-change negative" id="stat-pendiente-pct">Por cobrar</span>
+                        </div>
+                        
+                        <div class="stat-card purple">
+                            <div class="stat-header">
+                                <div class="stat-icon purple">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
+                                <p class="stat-label">Intereses<br>Generados</p>
+                            </div>
+                            <p class="stat-value" id="stat-intereses">$0</p>
+                            <span class="stat-change positive">Ingresos</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Grid -->
+                    <div class="main-grid">
+                        <!-- Clients Table -->
+                        <div class="clients-card">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-title">Clientes y Score Crediticio</h3>
+                                    <p class="card-subtitle">Vista rapida de score y cuotas pendientes</p>
+                                </div>
+                                <div class="card-actions">
+                                    <div class="filter-tabs">
+                                        <button class="filter-tab active" data-filter="all">Todos</button>
+                                        <button class="filter-tab" data-filter="risk">Riesgo</button>
+                                        <button class="filter-tab" data-filter="ok">Al dia</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-container">
+                                <table class="modern-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Cliente</th>
+                                            <th>Score</th>
+                                            <th>Cuotas</th>
+                                            <th style="text-align: right;">Saldo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="clients-table-body">
+                                        <!-- Dynamic content -->
+                                    </tbody>
+                                </table>
+                                <div class="empty-table" id="empty-table" style="display: none;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <line x1="19" y1="8" x2="19" y2="14"/>
+                                        <line x1="22" y1="11" x2="16" y2="11"/>
+                                    </svg>
+                                    <p>No hay clientes registrados</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Score Distribution -->
+                        <div class="score-card">
+                            <div class="score-summary">
+                                <p class="score-summary-title">Score Promedio del Portafolio</p>
+                                <div class="score-average">
+                                    <span class="score-average-value" id="score-promedio">0</span>
+                                    <span class="score-average-max">/ 1000</span>
+                                </div>
+                                <p class="score-average-label" id="score-promedio-label">Sin datos</p>
+                            </div>
+                            <div class="score-distribution">
+                                <h4 class="distribution-title">Distribucion por Categoria</h4>
+                                
+                                <div class="distribution-item">
+                                    <div class="dist-letter a">A</div>
+                                    <div class="dist-info">
+                                        <p class="dist-label">Riesgo Bajo</p>
+                                        <p class="dist-range">800 - 1000 pts</p>
+                                    </div>
+                                    <div class="dist-bar">
+                                        <div class="dist-fill a" id="dist-bar-a" style="width: 0%"></div>
+                                    </div>
+                                    <span class="dist-count" id="dist-count-a">0</span>
+                                </div>
+                                
+                                <div class="distribution-item">
+                                    <div class="dist-letter b">B</div>
+                                    <div class="dist-info">
+                                        <p class="dist-label">Riesgo Medio</p>
+                                        <p class="dist-range">600 - 799 pts</p>
+                                    </div>
+                                    <div class="dist-bar">
+                                        <div class="dist-fill b" id="dist-bar-b" style="width: 0%"></div>
+                                    </div>
+                                    <span class="dist-count" id="dist-count-b">0</span>
+                                </div>
+                                
+                                <div class="distribution-item">
+                                    <div class="dist-letter c">C</div>
+                                    <div class="dist-info">
+                                        <p class="dist-label">Riesgo Alto</p>
+                                        <p class="dist-range">400 - 599 pts</p>
+                                    </div>
+                                    <div class="dist-bar">
+                                        <div class="dist-fill c" id="dist-bar-c" style="width: 0%"></div>
+                                    </div>
+                                    <span class="dist-count" id="dist-count-c">0</span>
+                                </div>
+                                
+                                <div class="distribution-item">
+                                    <div class="dist-letter d">D</div>
+                                    <div class="dist-info">
+                                        <p class="dist-label">Riesgo Critico</p>
+                                        <p class="dist-range">0 - 399 pts</p>
+                                    </div>
+                                    <div class="dist-bar">
+                                        <div class="dist-fill d" id="dist-bar-d" style="width: 0%"></div>
+                                    </div>
+                                    <span class="dist-count" id="dist-count-d">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Summary Cards -->
+                    <div class="bottom-grid">
+                        <div class="summary-card-v2 blue">
+                            <div class="summary-icon blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                            </div>
+                            <p class="summary-label">Tasa Promedio</p>
+                            <p class="summary-value-v2" id="summary-tasa">0%</p>
+                            <div class="summary-bar">
+                                <div class="summary-bar-fill blue" style="width: 60%"></div>
+                            </div>
+                            <p class="summary-footer">Tasa de interes promedio ponderada</p>
+                        </div>
+                        
+                        <div class="summary-card-v2 red">
+                            <div class="summary-icon red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                    <line x1="12" y1="9" x2="12" y2="13"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </svg>
+                            </div>
+                            <p class="summary-label">Cuotas Vencidas</p>
+                            <p class="summary-value-v2" id="summary-vencidas">0</p>
+                            <div class="summary-bar">
+                                <div class="summary-bar-fill red" id="summary-vencidas-bar" style="width: 0%"></div>
+                            </div>
+                            <p class="summary-footer">Pagos atrasados que requieren gestion</p>
+                        </div>
+                        
+                        <div class="summary-card-v2 green">
+                            <div class="summary-icon green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <p class="summary-label">Cuotas Pagadas</p>
+                            <p class="summary-value-v2" id="summary-pagadas">0</p>
+                            <div class="summary-bar">
+                                <div class="summary-bar-fill green" id="summary-pagadas-bar" style="width: 0%"></div>
+                            </div>
+                            <p class="summary-footer">Total de cuotas recaudadas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="notificacion" class="notificacion hidden"></div>
+    <script src="../js/config.js"></script>
+    <script src="../js/auth-check.js"></script>
+
+    <script src="../js/shared-data.js"></script>
+    <script src="../js/payment-processor.js"></script>
+    <script src="../js/credit-score-engine.js"></script>
+    <script>
+        // ========== DASHBOARD PREMIUM MANAGER ==========
+        class DashboardPremiumManager {
+            constructor() {
+                this.scoreEngine = new CreditScoreEngine();
+                this.currentFilter = 'all';
+                this.init();
+            }
+            
+            init() {
+                const esperar = (condition, callback, maxWait = 5000) => {
+                    const inicio = Date.now();
+                    const intervalo = setInterval(() => {
+                        if (condition()) {
+                            clearInterval(intervalo);
+                            callback();
+                        } else if (Date.now() - inicio > maxWait) {
+                            clearInterval(intervalo);
+                            console.error('Timeout esperando app');
+                        }
+                    }, 100);
+                };
+                
+                esperar(
+                    () => window.app && window.app.usuarios && Array.isArray(window.app.usuarios),
+                    () => {
+                        this.render();
+                        window.addEventListener('datosActualizados', () => this.render());
+                        setInterval(() => this.render(), 30000);
+                        this.setupFilters();
+                    }
+                );
+            }
+            
+            setupFilters() {
+                document.querySelectorAll('.filter-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.currentFilter = e.target.dataset.filter;
+                        this.renderClientsTable();
+                    });
+                });
+            }
+            
+            formatNumber(num) {
+                return new Intl.NumberFormat('es-CO').format(Math.round(num));
+            }
+            
+            getAvatarColor(nombre) {
+                const colors = ['#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4'];
+                const index = nombre ? nombre.charCodeAt(0) % colors.length : 0;
+                return colors[index];
+            }
+            
+            getInitials(nombre) {
+                if (!nombre) return '?';
+                const parts = nombre.trim().split(' ');
+                if (parts.length >= 2) {
+                    return (parts[0][0] + parts[1][0]).toUpperCase();
+                }
+                return nombre.substring(0, 2).toUpperCase();
+            }
+            
+            render() {
+                this.renderStats();
+                this.renderClientsTable();
+                this.renderScoreDistribution();
+                this.renderSummary();
+            }
+            
+            renderStats() {
+                const usuarios = window.app.usuarios || [];
+                
+                const totalClientes = usuarios.length;
+                const capitalDesembolsado = usuarios.reduce((sum, u) => sum + (u.monto || 0), 0);
+                const saldoPendiente = usuarios.reduce((sum, u) => sum + window.PaymentProcessor.obtenerSaldoTotalPendiente(u), 0);
+                const interesesGenerados = usuarios.reduce((sum, u) => {
+                    return sum + (u.cuotas || []).filter(c => c.pagado).reduce((s, c) => s + (c.interes || 0), 0);
+                }, 0);
+                
+                document.getElementById('stat-clientes').textContent = this.formatNumber(totalClientes);
+                document.getElementById('stat-capital').textContent = '$' + this.formatNumber(capitalDesembolsado);
+                document.getElementById('stat-pendiente').textContent = '$' + this.formatNumber(saldoPendiente);
+                document.getElementById('stat-intereses').textContent = '$' + this.formatNumber(interesesGenerados);
+            }
+            
+            renderClientsTable() {
+                const tbody = document.getElementById('clients-table-body');
+                const emptyState = document.getElementById('empty-table');
+                let usuarios = window.app.usuarios || [];
+                
+                // Calculate scores
+                const usuariosConScore = usuarios.map(u => {
+                    const scoreData = this.scoreEngine.calcularScore(u);
+                    const cuotas = u.cuotas || [];
+                    const cuotasPagadas = cuotas.filter(c => c.pagado).length;
+                    const totalCuotas = cuotas.length;
+                    const hoy = new Date();
+                    const cuotasVencidas = cuotas.filter(c => !c.pagado && new Date(c.fecha) < hoy).length;
+                    const saldoPendiente = window.PaymentProcessor.obtenerSaldoTotalPendiente(u);
+                    
+                    return {
+                        ...u,
+                        scoreData,
+                        cuotasPagadas,
+                        totalCuotas,
+                        cuotasVencidas,
+                        saldoPendiente
+                    };
+                });
+                
+                // Apply filter
+                let filteredUsers = usuariosConScore;
+                if (this.currentFilter === 'risk') {
+                    filteredUsers = usuariosConScore.filter(u => u.scoreData.categoria === 'C' || u.scoreData.categoria === 'D');
+                } else if (this.currentFilter === 'ok') {
+                    filteredUsers = usuariosConScore.filter(u => u.scoreData.categoria === 'A' || u.scoreData.categoria === 'B');
+                }
+                
+                // Sort by score (lowest first for risk visibility)
+                filteredUsers.sort((a, b) => a.scoreData.score - b.scoreData.score);
+                
+                if (filteredUsers.length === 0) {
+                    tbody.innerHTML = '';
+                    emptyState.style.display = 'block';
+                    return;
+                }
+                
+                emptyState.style.display = 'none';
+                
+                tbody.innerHTML = filteredUsers.slice(0, 10).map(usuario => {
+                    const { scoreData, cuotasPagadas, totalCuotas, cuotasVencidas, saldoPendiente } = usuario;
+                    const gradeClass = `grade-${scoreData.categoria.toLowerCase()}`;
+                    
+                    // Determine cuotas status
+                    let cuotasClass = '';
+                    if (cuotasPagadas === totalCuotas && totalCuotas > 0) {
+                        cuotasClass = 'complete';
+                    } else if (cuotasVencidas > 0) {
+                        cuotasClass = 'danger';
+                    } else if (cuotasPagadas < totalCuotas) {
+                        cuotasClass = 'warning';
+                    }
+                    
+                    const cuotasIcon = cuotasClass === 'complete' 
+                        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+                        : cuotasClass === 'danger'
+                        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+                        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="1"/></svg>';
+                    
+                    return `
+                        <tr>
+                            <td>
+                                <div class="client-cell">
+                                    <div class="client-avatar" style="background: ${this.getAvatarColor(usuario.nombre)}">
+                                        ${this.getInitials(usuario.nombre)}
+                                    </div>
+                                    <div class="client-info">
+                                        <p class="client-name">${usuario.nombre}</p>
+                                        <p class="client-phone">${usuario.telefono || 'Sin telefono'}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="score-badge ${gradeClass}">
+                                    <span class="score-letter">${scoreData.categoria}</span>
+                                    <span>${scoreData.score}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cuotas-badge ${cuotasClass}">
+                                    <span class="cuotas-icon">${cuotasIcon}</span>
+                                    <span>${cuotasPagadas}/${totalCuotas}</span>
+                                </div>
+                            </td>
+                            <td class="amount-cell">
+                                <p class="amount-value">$${this.formatNumber(saldoPendiente)}</p>
+                                <p class="amount-label">pendiente</p>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+            
+            renderScoreDistribution() {
+                const usuarios = window.app.usuarios || [];
+                
+                if (usuarios.length === 0) {
+                    document.getElementById('score-promedio').textContent = '0';
+                    document.getElementById('score-promedio-label').textContent = 'Sin datos';
+                    return;
+                }
+                
+                // Calculate scores
+                const scores = usuarios.map(u => this.scoreEngine.calcularScore(u));
+                const scorePromedio = scores.reduce((sum, s) => sum + s.score, 0) / scores.length;
+                
+                // Count by category
+                const distribution = { A: 0, B: 0, C: 0, D: 0 };
+                scores.forEach(s => distribution[s.categoria]++);
+                
+                // Update UI
+                document.getElementById('score-promedio').textContent = Math.round(scorePromedio);
+                
+                let label = 'Portafolio Saludable';
+                if (scorePromedio < 400) label = 'Portafolio en Riesgo Critico';
+                else if (scorePromedio < 600) label = 'Portafolio Requiere Atencion';
+                else if (scorePromedio < 800) label = 'Portafolio Estandar';
+                document.getElementById('score-promedio-label').textContent = label;
+                
+                // Update distribution bars
+                const total = usuarios.length;
+                ['a', 'b', 'c', 'd'].forEach(cat => {
+                    const count = distribution[cat.toUpperCase()];
+                    const pct = total > 0 ? (count / total) * 100 : 0;
+                    document.getElementById(`dist-count-${cat}`).textContent = count;
+                    document.getElementById(`dist-bar-${cat}`).style.width = `${pct}%`;
+                });
+            }
+            
+            renderSummary() {
+                const usuarios = window.app.usuarios || [];
+                
+                // Calculate stats
+                let totalCuotas = 0;
+                let cuotasPagadas = 0;
+                let cuotasVencidas = 0;
+                let sumaTasas = 0;
+                const hoy = new Date();
+                
+                usuarios.forEach(u => {
+                    sumaTasas += u.tasa || 0;
+                    (u.cuotas || []).forEach(c => {
+                        totalCuotas++;
+                        if (c.pagado) {
+                            cuotasPagadas++;
+                        } else if (new Date(c.fecha) < hoy) {
+                            cuotasVencidas++;
+                        }
+                    });
+                });
+                
+                const tasaPromedio = usuarios.length > 0 ? sumaTasas / usuarios.length : 0;
+                const pctPagadas = totalCuotas > 0 ? (cuotasPagadas / totalCuotas) * 100 : 0;
+                const pctVencidas = totalCuotas > 0 ? (cuotasVencidas / totalCuotas) * 100 : 0;
+                
+                document.getElementById('summary-tasa').textContent = tasaPromedio.toFixed(1) + '%';
+                document.getElementById('summary-vencidas').textContent = cuotasVencidas;
+                document.getElementById('summary-pagadas').textContent = cuotasPagadas;
+                document.getElementById('summary-vencidas-bar').style.width = `${Math.min(pctVencidas * 2, 100)}%`;
+                document.getElementById('summary-pagadas-bar').style.width = `${pctPagadas}%`;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            new DashboardPremiumManager();
+            
+            // Mobile menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            if (menuBtn && sidebar && overlay) {
+                menuBtn.addEventListener('click', () => {
+                    sidebar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                });
+                
+                overlay.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            }
+            
+            // User name
+            try {
+                const name = sessionStorage.getItem('currentUser');
+                if (name) {
+                    const el = document.querySelector('.user-name');
+                    if (el) el.textContent = name;
+                }
+            } catch (e) {}
+        });
+    </script>
+</body>
+</html>

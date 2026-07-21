@@ -1,0 +1,520 @@
+/* ========================================
+   PAGOS Y CUOTAS - CSS EXCLUSIVO
+   ======================================== */
+
+/* Contenedor de informacion general colapsable */
+.info-general-container {
+  margin-bottom: 24px;
+}
+
+.info-general-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.info-general-toggle:hover {
+  background: var(--secondary);
+  border-color: var(--primary);
+}
+
+.info-general-toggle.active {
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+.info-general-toggle h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.info-general-toggle h3 svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+}
+
+.info-general-toggle .toggle-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-light);
+  transition: transform 0.3s ease;
+}
+
+.info-general-toggle.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.info-general-content {
+  display: none;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+.info-general-content.show {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filtros de pagos mejorados */
+.pagos-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--bg-white);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.pagos-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagos-filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.pagos-filter-group input[type="number"] {
+  width: 80px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.pagos-filter-group input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+/* Tabla de usuarios en pagos */
+.pagos-usuario-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagos-usuario-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pagos-usuario-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pagos-usuario-info .nombre {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pagos-usuario-info .cedula-info {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.pagos-usuario-info .telefono {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Badges de cuotas */
+.cuotas-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cuotas-badge.pagadas {
+  background: rgba(14, 159, 110, 0.1);
+  color: var(--accent-success);
+}
+
+.cuotas-badge.faltantes {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent-warning);
+}
+
+/* Tabla de cuotas mejorada */
+.cuotas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cuotas-table thead {
+  background: var(--secondary);
+}
+
+.cuotas-table thead th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.cuotas-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13px;
+}
+
+.cuotas-table tbody tr.estado-pagada {
+  background: rgba(14, 159, 110, 0.03);
+}
+
+.cuotas-table tbody tr.estado-vencida {
+  background: rgba(240, 82, 82, 0.05);
+}
+
+.cuotas-table tbody tr.estado-abono {
+  background: rgba(245, 158, 11, 0.05);
+}
+
+/* Fecha de pago en tabla */
+.fecha-pago-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fecha-pago-cell .fecha-realizada {
+  color: var(--accent-success);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.fecha-pago-cell .fecha-vencimiento {
+  color: var(--text-light);
+  font-size: 11px;
+}
+
+/* Botones de tipo de pago */
+.tipo-pago-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tipo-pago-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  background: var(--bg-white);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.tipo-pago-btn:hover {
+  border-color: var(--primary);
+}
+
+.tipo-pago-btn.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.tipo-pago-btn .tipo-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tipo-pago-btn .tipo-descripcion {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+.tipo-pago-btn.active .tipo-titulo {
+  color: var(--primary);
+}
+
+/* Modal de pago mejorado */
+.pago-modal-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+  background: var(--secondary);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.pago-modal-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pago-modal-info-item label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pago-modal-info-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pago-modal-info-item span.highlight {
+  color: var(--primary);
+  font-size: 16px;
+}
+
+/* Opciones de pago (capital vs interes) */
+.opciones-pago-container {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+.opciones-pago-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.opciones-pago-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.opcion-pago-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.opcion-pago-item:hover {
+  border-color: var(--primary);
+}
+
+.opcion-pago-item.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.opcion-pago-item input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.opcion-pago-item .opcion-info {
+  flex: 1;
+}
+
+.opcion-pago-item .opcion-titulo {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.opcion-pago-item .opcion-monto {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Desglose de pago */
+.desglose-pago {
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(26, 86, 219, 0.05);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+}
+
+.desglose-pago h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.desglose-pago-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.desglose-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.desglose-item .label {
+  color: var(--text-secondary);
+}
+
+.desglose-item .valor {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.desglose-item.total {
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.desglose-item.total .valor {
+  color: var(--primary);
+  font-size: 15px;
+}
+
+/* Modal de edicion de pago */
+.editar-pago-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editar-pago-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.editar-pago-form .readonly-field {
+  padding: 12px 16px;
+  background: var(--secondary);
+  border-radius: 8px;
+  color: var(--text-secondary);
+}
+
+/* Acciones en tabla de cuotas */
+.cuota-acciones {
+  display: flex;
+  gap: 6px;
+}
+
+.cuota-acciones .btn-action {
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+/* Estado de pago con fecha */
+.estado-con-fecha {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.estado-con-fecha .badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.estado-con-fecha .fecha-pago-realizado {
+  font-size: 10px;
+  color: var(--text-light);
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pagos-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .pagos-filter-group {
+    width: 100%;
+  }
+  
+  .pago-modal-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .opciones-pago-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tipo-pago-buttons {
+    flex-direction: column;
+  }
+  
+  .desglose-pago-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .editar-pago-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
