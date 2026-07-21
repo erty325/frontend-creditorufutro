@@ -83,6 +83,15 @@
                     </svg>
                     <span>Exportar</span>
                 </a>
+                <a href="crear-usuario.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="8.5" cy="7" r="4"/>
+                        <line x1="20" y1="8" x2="20" y2="14"/>
+                        <line x1="23" y1="11" x2="17" y2="11"/>
+                    </svg>
+                    <span>Crear Usuario</span>
+                </a>
 <a href="cambiar-contraseña.html" class="nav-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="11" width="18" height="11" rx="2"/>
@@ -131,15 +140,6 @@
                     <h2 id="section-title">Panel de Control</h2>
                 </div>
                 <div class="header-right">
-                    <button class="btn-crear-usuario" id="btn-crear-usuario" title="Crear nuevo usuario del sistema">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="8.5" cy="7" r="4"/>
-                            <line x1="20" y1="8" x2="20" y2="14"/>
-                            <line x1="23" y1="11" x2="17" y2="11"/>
-                        </svg>
-                        <span>Crear Usuario</span>
-                    </button>
                     <div class="header-info">
                         <span class="info-date" id="current-date"></span>
                         <div class="header-divider"></div>
@@ -382,40 +382,6 @@
     </div>
 
     <div id="notificacion" class="notificacion hidden"></div>
-
-    <!-- Modal Crear Usuario -->
-    <div id="modal-crear-usuario" class="modal hidden">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" style="max-width: 440px;">
-            <div class="modal-header">
-                <h3>Crear Usuario del Sistema</h3>
-                <button class="btn-close" id="btn-close-crear-usuario">&times;</button>
-            </div>
-            <div style="padding: 24px;">
-                <form id="form-crear-usuario">
-                    <div class="form-group">
-                        <label for="sys-email">Email</label>
-                        <input id="sys-email" type="email" placeholder="usuario@ejemplo.com" required autocomplete="off" />
-                        <span class="error-message" id="error-sys-email"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="sys-password">Contrasena</label>
-                        <input id="sys-password" type="password" placeholder="Minimo 6 caracteres" required minlength="6" autocomplete="off" />
-                        <span class="error-message" id="error-sys-password"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="sys-confirm">Confirmar Contrasena</label>
-                        <input id="sys-confirm" type="password" placeholder="Repita la contrasena" required minlength="6" autocomplete="off" />
-                        <span class="error-message" id="error-sys-confirm"></span>
-                    </div>
-                    <div style="display:flex; gap:10px; margin-top:16px;">
-                        <button type="submit" class="btn btn-primary" style="flex:1;" id="btn-submit-crear-usuario">Crear Usuario</button>
-                        <button type="button" class="btn btn-secondary" id="btn-cancel-crear-usuario">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script src="../js/config.js"></script>
     <script src="../js/auth-check.js"></script>
@@ -681,101 +647,6 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             new DashboardPremiumManager();
-
-            // ========== MODAL CREAR USUARIO ==========
-            const modal = document.getElementById('modal-crear-usuario');
-            const btnOpen = document.getElementById('btn-crear-usuario');
-            const btnClose = document.getElementById('btn-close-crear-usuario');
-            const btnCancel = document.getElementById('btn-cancel-crear-usuario');
-            const form = document.getElementById('form-crear-usuario');
-            const btnSubmit = document.getElementById('btn-submit-crear-usuario');
-
-            function abrirModalCrearUsuario() {
-                form.reset();
-                form.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-                modal.classList.remove('hidden');
-            }
-
-            function cerrarModalCrearUsuario() {
-                modal.classList.add('hidden');
-            }
-
-            if (btnOpen) btnOpen.addEventListener('click', abrirModalCrearUsuario);
-            if (btnClose) btnClose.addEventListener('click', cerrarModalCrearUsuario);
-            if (btnCancel) btnCancel.addEventListener('click', cerrarModalCrearUsuario);
-            if (modal) {
-                modal.querySelector('.modal-overlay').addEventListener('click', cerrarModalCrearUsuario);
-            }
-
-            if (form) {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    form.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-
-                    const email = document.getElementById('sys-email').value.trim();
-                    const password = document.getElementById('sys-password').value;
-                    const confirm = document.getElementById('sys-confirm').value;
-
-                    if (!email) {
-                        document.getElementById('error-sys-email').textContent = 'El email es requerido';
-                        return;
-                    }
-                    if (!password || password.length < 6) {
-                        document.getElementById('error-sys-password').textContent = 'Minimo 6 caracteres';
-                        return;
-                    }
-                    if (password !== confirm) {
-                        document.getElementById('error-sys-confirm').textContent = 'Las contrasenas no coinciden';
-                        return;
-                    }
-
-                    const token = sessionStorage.getItem('access_token');
-                    if (!token) {
-                        mostrarNotificacion('No autenticado', 'error');
-                        return;
-                    }
-
-                    btnSubmit.disabled = true;
-                    btnSubmit.textContent = 'Creando...';
-
-                    try {
-                        const res = await fetch(window.API_BASE_URL + '/register', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': 'Bearer ' + token,
-                            },
-                            body: JSON.stringify({
-                                email: email,
-                                password: password,
-                                confirm_password: confirm,
-                            }),
-                        });
-
-                        if (!res.ok) {
-                            const data = await res.json().catch(() => null);
-                            throw new Error(data?.detail || 'Error creando usuario');
-                        }
-
-                        mostrarNotificacion('Usuario creado correctamente', 'success');
-                        cerrarModalCrearUsuario();
-                    } catch (err) {
-                        mostrarNotificacion(err.message || 'Error creando usuario', 'error');
-                    } finally {
-                        btnSubmit.disabled = false;
-                        btnSubmit.textContent = 'Crear Usuario';
-                    }
-                });
-            }
-
-            function mostrarNotificacion(mensaje, tipo) {
-                const notif = document.getElementById('notificacion');
-                if (!notif) return;
-                notif.textContent = mensaje;
-                notif.className = 'notificacion ' + tipo;
-                notif.classList.remove('hidden');
-                setTimeout(() => notif.classList.add('hidden'), 3000);
-            }
             
             // Mobile menu
             const menuBtn = document.getElementById('mobile-menu-btn');

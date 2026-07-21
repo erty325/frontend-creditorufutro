@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreditoFuturo - Crear Usuario</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/account.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="app-container">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <svg viewBox="0 0 40 40" class="logo-icon">
+              <defs>
+                <linearGradient id="gradientLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color: #60a5fa; stop-opacity: 1" />
+                  <stop offset="100%" style="stop-color: #3b82f6; stop-opacity: 1" />
+                </linearGradient>
+              </defs>
+              <circle cx="20" cy="20" r="18" fill="url(#gradientLogo)" />
+              <text x="20" y="26" text-anchor="middle" fill="white" font-weight="bold" font-size="16">C</text>
+            </svg>
+            <h1>CreditoFuturo</h1>
+          </div>
+          <p class="sidebar-subtitle">SCORE SYSTEM V2.0</p>
+        </div>
+        <nav class="nav-menu">
+          <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            <span>Dashboard</span>
+          </a>
+          <a href="usuarios.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Clientes</span>
+          </a>
+          <a href="pagos-cuotas.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+            <span>Pagos y Cuotas</span>
+          </a>
+          <a href="cuadre-caja.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <span>Cuadre de Caja</span>
+          </a>
+          <a href="historial.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Historial</span>
+          </a>
+          <a href="analisis-riesgo.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <span>Analisis Riesgo</span>
+          </a>
+          <a href="exportaciones.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Exportar</span>
+          </a>
+          <a href="crear-usuario.html" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <line x1="20" y1="8" x2="20" y2="14"/>
+              <line x1="23" y1="11" x2="17" y2="11"/>
+            </svg>
+            <span>Crear Usuario</span>
+          </a>
+          <a href="cambiar-contraseña.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>Cambiar Contrasena</span>
+          </a>
+          <a href="cambiar-email.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Cambiar Email</span>
+          </a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="user-card">
+            <svg viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="18" fill="#3B82F6"/>
+              <circle cx="20" cy="14" r="5" fill="white"/>
+              <path d="M10 32 Q10 24 20 24 Q30 24 30 32" fill="white"/>
+            </svg>
+            <div class="user-details">
+              <p class="user-name">Administrador</p>
+              <p class="user-role">Sistema Financiero</p>
+            </div>
+          </div>
+          <button onclick="logout()" class="btn btn-secondary" style="width: 100%; margin-top: 12px; padding: 12px;">
+            Cerrar Sesion
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="header">
+          <div class="header-left">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            </button>
+            <h2 id="section-title">Crear Usuario del Sistema</h2>
+          </div>
+          <div class="header-right">
+            <div class="header-info">
+              <span class="info-date" id="current-date"></span>
+              <div class="header-divider"></div>
+              <span class="info-hour" id="current-hour"></span>
+            </div>
+          </div>
+        </header>
+
+        <section class="section active">
+          <div class="account-page">
+            <div class="account-card" style="max-width: 520px; margin: 40px auto;">
+              <div class="card-icon-header blue">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="8.5" cy="7" r="4"/>
+                    <line x1="20" y1="8" x2="20" y2="14"/>
+                    <line x1="23" y1="11" x2="17" y2="11"/>
+                  </svg>
+                </div>
+                <h3>Nuevo Usuario</h3>
+                <p>Crea una cuenta de acceso al sistema para un nuevo administrador.</p>
+              </div>
+
+              <div class="info-banner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <span>El nuevo usuario tendra acceso completo al sistema con rol de Administrador.</span>
+              </div>
+
+              <form id="form-crear-usuario" style="margin-top: 24px;">
+                <div class="form-group">
+                  <label for="sys-email">Email</label>
+                  <div class="input-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <input id="sys-email" type="email" placeholder="usuario@ejemplo.com" required autocomplete="off" />
+                  </div>
+                  <span class="error-message" id="error-sys-email"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="sys-password">Contrasena</label>
+                  <div class="input-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                      <rect x="3" y="11" width="18" height="11" rx="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <input id="sys-password" type="password" placeholder="Minimo 6 caracteres" required minlength="6" autocomplete="off" />
+                  </div>
+                  <span class="error-message" id="error-sys-password"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="sys-confirm">Confirmar Contrasena</label>
+                  <div class="input-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <polyline points="9 12 11 14 15 10"/>
+                    </svg>
+                    <input id="sys-confirm" type="password" placeholder="Repita la contrasena" required minlength="6" autocomplete="off" />
+                  </div>
+                  <span class="error-message" id="error-sys-confirm"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 16px; font-size: 15px;" id="btn-submit-crear-usuario">
+                  Crear Usuario
+                </button>
+              </form>
+
+              <div id="crear-usuario-alert" class="alert hidden" style="margin-top: 16px;"></div>
+
+              <div class="security-tips" style="margin-top: 24px;">
+                <h4>Recomendaciones</h4>
+                <ul>
+                  <li>Usa un email corporativo o institucional.</li>
+                  <li>La contrasena debe tener al menos 6 caracteres.</li>
+                  <li>No compartas las credenciales por canales no seguros.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="notificacion" class="notificacion hidden"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth-check.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('form-crear-usuario');
+        const btnSubmit = document.getElementById('btn-submit-crear-usuario');
+        const alertEl = document.getElementById('crear-usuario-alert');
+
+        function showAlert(msg, type) {
+          alertEl.textContent = msg;
+          alertEl.className = 'alert ' + type;
+          alertEl.classList.remove('hidden');
+          setTimeout(() => alertEl.classList.add('hidden'), 4000);
+        }
+
+        function mostrarNotificacion(mensaje, tipo) {
+          const notif = document.getElementById('notificacion');
+          if (!notif) return;
+          notif.textContent = mensaje;
+          notif.className = 'notificacion ' + tipo;
+          notif.classList.remove('hidden');
+          setTimeout(() => notif.classList.add('hidden'), 3000);
+        }
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+          alertEl.classList.add('hidden');
+
+          const email = document.getElementById('sys-email').value.trim();
+          const password = document.getElementById('sys-password').value;
+          const confirm = document.getElementById('sys-confirm').value;
+
+          if (!email) {
+            document.getElementById('error-sys-email').textContent = 'El email es requerido';
+            return;
+          }
+          if (!password || password.length < 6) {
+            document.getElementById('error-sys-password').textContent = 'Minimo 6 caracteres';
+            return;
+          }
+          if (password !== confirm) {
+            document.getElementById('error-sys-confirm').textContent = 'Las contrasenas no coinciden';
+            return;
+          }
+
+          const token = sessionStorage.getItem('access_token');
+          if (!token) {
+            mostrarNotificacion('No autenticado', 'error');
+            return;
+          }
+
+          btnSubmit.disabled = true;
+          btnSubmit.textContent = 'Creando...';
+
+          try {
+            const res = await fetch(window.API_BASE_URL + '/register', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+              },
+              body: JSON.stringify({
+                email: email,
+                password: password,
+                confirm_password: confirm,
+              }),
+            });
+
+            if (!res.ok) {
+              const data = await res.json().catch(() => null);
+              throw new Error(data?.detail || 'Error creando usuario');
+            }
+
+            showAlert('Usuario "' + email + '" creado correctamente.', 'success');
+            mostrarNotificacion('Usuario creado correctamente', 'success');
+            form.reset();
+          } catch (err) {
+            showAlert(err.message || 'Error creando usuario', 'error');
+          } finally {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = 'Crear Usuario';
+          }
+        });
+
+        // Mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        if (menuBtn) {
+          menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+          });
+        }
+        if (overlay) {
+          overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+
+        // User name
+        try {
+          const name = sessionStorage.getItem('currentUser');
+          if (name) {
+            const el = document.querySelector('.user-name');
+            if (el) el.textContent = name;
+          }
+        } catch (e) {}
+
+        // Date
+        function actualizarFecha() {
+          const hoy = new Date();
+          const dateEl = document.getElementById('current-date');
+          const hourEl = document.getElementById('current-hour');
+          if (dateEl) dateEl.textContent = hoy.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+          if (hourEl) hourEl.textContent = hoy.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+        }
+        actualizarFecha();
+        setInterval(actualizarFecha, 60000);
+      });
+    </script>
+  </body>
+</html>
