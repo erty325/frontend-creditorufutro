@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const token = sessionStorage.getItem("access_token")
       const creditId = editandoPago.usuario.credit_id || editandoPago.usuario.id
 
-      fetch(`window.API_BASE_URL/credits/retroceder_pago/${creditId}/${editandoPago.numeroCuota}`, {
+      fetch(`${window.API_BASE_URL}/credits/retroceder_pago/${creditId}/${editandoPago.numeroCuota}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -600,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const token = sessionStorage.getItem("access_token")
       const creditId = editandoPago.usuario.credit_id || editandoPago.usuario.id
 
-      fetch(`window.API_BASE_URL/credits/editar_pago/${creditId}/${editandoPago.numeroCuota}`, {
+      fetch(`${window.API_BASE_URL}/credits/editar_pago/${creditId}/${editandoPago.numeroCuota}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -668,7 +668,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const creditId = usuario.credit_id || usuario.id
     const note = document.getElementById("nota-pago").value || ""
 
-    fetch(`window.API_BASE_URL/credits/pago_cuota/${creditId}/${cuota.numero}`, {
+    fetch(`${window.API_BASE_URL}/credits/pago_cuota/${creditId}/${cuota.numero}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -704,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Obtener datos detallados de cuotas desde el backend para tener capital/interés actualizado
     try {
-      const response = await fetch(`window.API_BASE_URL/credits/installments/${usuario.credit_id}`)
+      const response = await fetch(`${window.API_BASE_URL}/credits/installments/${usuario.credit_id}`)
       if (response.ok) {
         const data = await response.json()
         if (data.installments) {
@@ -872,7 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const token = sessionStorage.getItem("access_token")
     const creditId = usuario.credit_id || usuario.id
 
-    fetch(`window.API_BASE_URL/credits/pago_parcial/${creditId}`, {
+    fetch(`${window.API_BASE_URL}/credits/pago_parcial/${creditId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

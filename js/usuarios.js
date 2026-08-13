@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (Object.keys(clientChanges).length > 0) {
           promises.push(
             fetch(
-              `window.API_BASE_URL/clients/update_client/${editingUserId}`,
+              `${window.API_BASE_URL}/clients/update_client/${editingUserId}`,
               {
                 method: "PUT",
                 headers,
@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (Object.keys(creditChanges).length > 0 && user.credit_id) {
           promises.push(
             fetch(
-              `window.API_BASE_URL/credits/update_credit/${user.credit_id}`,
+              `${window.API_BASE_URL}/credits/update_credit/${user.credit_id}`,
               {
                 method: "PUT",
                 headers,
@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       fetch(
-        `window.API_BASE_URL/clients/delete_client/${id}`,
+        `${window.API_BASE_URL}/clients/delete_client/${id}`,
         {
           method: "DELETE",
           headers: { Authorization: "Bearer " + token },

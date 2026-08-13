@@ -724,7 +724,7 @@
 
           try {
             const res = await fetch(
-              "https://backend-creditofuturo.onrender.com/users/update_password/",
+              window.API_BASE_URL + "/users/update_password/",
               {
                 method: "PUT",
                 headers: {
