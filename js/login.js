@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if user is already logged in
   const isLoggedIn = sessionStorage.getItem("isLoggedIn")
   if (isLoggedIn === "true") {
-    window.location.href = "/app/index.html"
+    window.location.href = "app/index.html"
     return
   }
 
@@ -118,12 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
             loginPage.addEventListener(
               "animationend",
               () => {
-                window.location.href = "/app/index.html"
+    window.location.href = "app/index.html"
               },
               { once: true }
             )
           } else {
-            window.location.href = "/app/index.html"
+            window.location.href = "app/index.html"
           }
         }, 600)
       })

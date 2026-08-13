@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", () => {
           fecha_primer_pago: creditPayload.fecha_primer_pago,
         };
 
-        fetch("window.API_BASE_URL/clients/add_client", {
+        fetch(window.API_BASE_URL + "/clients/add_client", {
           method: "POST",
           headers,
           body: JSON.stringify(body),
